@@ -1,0 +1,51 @@
+.header
+{
+    height: 35.422px;
+    padding: 10px;
+    background-color: rgb(25,25,25);
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.searchBox input
+{
+    width: 250px;
+    height: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 5px;
+    background-color: rgb(20,20,20);
+    border: 1px solid rgb(60, 60, 60);
+}
+.searchBox input::placeholder
+{
+    font-weight: 700;
+    font-size: 14px;
+
+}
+.logobutton
+{
+    color: white;
+  
+    font-size: 26px;
+    margin-left: 40px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.homebutton
+{
+    opacity: 70%;
+}
+button
+{
+  background: none;
+	color: inherit;
+	border: 0;
+	padding: 0;
+}
+.homebutton:hover{
+    opacity: 100%;
+}

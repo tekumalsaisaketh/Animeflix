@@ -1,0 +1,9 @@
+.animeListContainer
+{
+    display: grid;
+grid-template-columns: repeat(auto-fill,180px);
+column-gap: 2px;
+justify-content: center;
+row-gap: 10px;
+    
+}

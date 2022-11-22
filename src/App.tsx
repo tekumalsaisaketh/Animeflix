@@ -1,25 +1,39 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import LeftSide from './components/Leftside';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Player from './components/Player'
+import DetailsPage from './components/Details';
+import RightSide from './components/Rightside';
 
 function App() {
+  const queryClient = new QueryClient()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <Header></Header>
+        <BrowserRouter>
+          <Routes>
+              <Route index element=
+              {
+                <div className='container'>
+                  <div className='leftside'>
+                    <LeftSide></LeftSide>
+                  </div>
+                  <div className='rightside'>
+                    <RightSide></RightSide>
+                  </div>
+                </div>
+              } />
+              <Route path="player/*" element={<Player></Player>} />
+              <Route path="details/*" element={<DetailsPage></DetailsPage>}/>
+          </Routes>
+        </BrowserRouter>
     </div>
+    </QueryClientProvider>
   );
 }
 

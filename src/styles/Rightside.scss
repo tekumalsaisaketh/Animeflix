@@ -1,0 +1,40 @@
+.topanimeimg
+{
+    width: 56px;
+    height: 75px;
+    margin-right: 10px;
+}
+.topanimeli
+{
+    display: flex;
+    margin-bottom: 10px;
+}
+ a{
+    color: #87b4ce;
+    font-size: 13px;
+}
+.topAnimeDetails
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start
+}
+.topAnimeDetails span{
+    margin-top: 10px;
+    font-weight: 700;
+}
+.rightsideHeading
+{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    opacity: 90%;
+    text-align: center;
+    margin-bottom: 10px;
+    padding:  5px 0 5px 0;
+    border-bottom: 1px solid #3c3c3c;
+}
+.topanimeli:hover{
+    background-color: rgba(50,50,50);
+}

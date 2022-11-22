@@ -1,0 +1,47 @@
+#navtab
+{
+    margin: 15px 10px 15px 65px;
+    width: 50%;
+}
+.nav
+{
+    width: 100%;
+}
+#navtab ul{
+    display: flex;
+    list-style: none;
+}
+.active
+{
+    a{
+        color: white !important ;
+    }
+    border-bottom: 1px solid #e36a6a;
+    color: white !important ;
+    background-color: rgba(50,50,50) !important;
+}
+#navtab ul li{
+    margin: 0 2px 0 2px;
+    box-sizing: border-box;
+    width: fit-content;
+    padding: 5px 14px 5px 14px;
+    height: 35px;
+    color: #87b4ce ;
+    background-color: #282828;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+#navtab ul li a{
+    color: #87b4ce ;
+}
+
+
+#navtab ul li:hover
+{
+    a{
+        color: white !important ;
+    }
+    background-color: rgba(50,50,50) !important;
+}
