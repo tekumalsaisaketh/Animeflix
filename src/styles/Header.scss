@@ -10,7 +10,7 @@
 }
 .searchBox input
 {
-    width: 250px;
+    width: 278px;
     height: 20px;
     margin-left: 40px;
     margin-right: 20px;
@@ -19,6 +19,7 @@
     padding-right: 5px;
     background-color: rgb(20,20,20);
     border: 1px solid rgb(60, 60, 60);
+    border: 1px solid gray;
 }
 .searchBox input::placeholder
 {
@@ -48,4 +49,41 @@ button
 }
 .homebutton:hover{
     opacity: 100%;
+}
+.searchanimeimg
+{
+  width: 30px;
+  height: 34px;
+  z-index: 10;
+  margin-right: 10px;
+  top: 100px;
+}
+.searchlist
+{
+    position: absolute;
+    padding: 20px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    top: 40px;
+    left: 353px;
+    z-index: 20;
+    list-style: none;
+    width: 295px  ;
+    background-color: rgb(25, 25, 25);
+    border: 1px solid gray;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.searchlist a li{
+    height: 50px !important;
+    display: flex;
+}
+.searchAnimeDetails
+{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 30px;
 }

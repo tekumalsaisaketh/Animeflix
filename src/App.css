@@ -7,6 +7,11 @@
   overflow-y: scroll;
   
 }
+input{
+  outline: none;
+  color: #87CEEB;
+  padding: 4px;
+}
 a{
   text-decoration: none;
 }
