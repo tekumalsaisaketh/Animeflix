@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Oval } from "react-loader-spinner";
 import '../styles/Player.scss'
 import EpisodesLister from "./EpisodesLister";
 const Player=()=>{
@@ -27,7 +28,9 @@ const Player=()=>{
         const res = await fetch(`http://localhost:5000/streamsb/watch/${episodeId}`);
         return res.json();
       };
+    
       const [videoUrl,setUrl]=useState("");
+
     useEffect(()=>{
         const getData = async () => 
         {   
@@ -39,12 +42,29 @@ const Player=()=>{
     
     return (
         <div className="player_page">
-            <iframe src={videoUrl} allowFullScreen={true} className="player" frameBorder={0}>
-            </iframe>
-            <div className="anime_info_episodes">
-                    <h2>{animeDetails?.animeTitle}</h2>
-                    <EpisodesLister episodesList={animeDetails?.episodesList} animeId={animeId?animeId:""} epNo={epNo}></EpisodesLister>
-            </div>
+            {animeDetails&&<div>
+                <iframe src={videoUrl} allowFullScreen={true} className="player" frameBorder={0}>
+                </iframe>
+                <div className="anime_info_episodes">
+                        <h2>{animeDetails?.animeTitle}</h2>
+                        <EpisodesLister episodesList={animeDetails?.episodesList} animeId={animeId?animeId:""} epNo={epNo}></EpisodesLister>
+                </div>
+            </div>}
+            {<div className="loadingSpinner">
+            <Oval
+                height={80}
+                width={80}
+                color="#87CEEB"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={!animeDetails}
+                ariaLabel='oval-loading'
+                secondaryColor="#4fa94d"
+                strokeWidth={2}
+                strokeWidthSecondary={2}
+
+                />
+            </div>}
         </div>
     )
     

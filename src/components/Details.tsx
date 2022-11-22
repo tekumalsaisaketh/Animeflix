@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import '../styles/Details.scss'
 import EpisodesLister from "./EpisodesLister";
+import { Oval } from  'react-loader-spinner'
+
 const DetailsPage=()=>{
     const url=window.location.href;
-    const animeId=url.split('/').at(-1)
+    const animeId=url.split('/').at(-1);
+    const app=document.getElementsByClassName('App') as HTMLCollectionOf<HTMLElement>;
+    const header=document.getElementsByClassName('header') as HTMLCollectionOf<HTMLElement>;
     const fetchDetails = async () => {
         const res = await fetch(`http://localhost:5000/anime-details/${animeId}`);
         return res.json();
@@ -17,13 +21,29 @@ const DetailsPage=()=>{
         };
         getData()
     },[])
-    console.log(animeDetails);
-    console.log(animeDetails);
-    
+    if(app&&animeDetails&&header)
+    {
+        app[0].style.backgroundImage=`url(${animeDetails?.animeImg})`
+        app[0].style.backgroundRepeat="no-repeat"
+        app[0].style.backgroundSize="cover"
+    }
+    useEffect(()=>{
+        if(app&&animeDetails&&header)
+        {
+            app[0].style.backgroundImage=`url(${animeDetails?.animeImg})`
+            app[0].style.backgroundRepeat="no-repeat"
+            app[0].style.backgroundSize="cover"
+        }
+        return ()=>{
+            app[0].style.backgroundImage="";
+            app[0].style.backgroundRepeat="no-repeat"
+            app[0].style.backgroundSize=""
+        }
+    },[app,header])
     
     return (
     <div>
-        <div className="main_body">
+        { animeDetails&&<div className="main_body">
             <div className="anime_name anime_info">
                 <i className="icongec-anime_info i_pos"></i>
                 <h2>ANIME INFO</h2>            
@@ -64,7 +84,25 @@ const DetailsPage=()=>{
                     <EpisodesLister episodesList={animeDetails?.episodesList} animeId={animeId?animeId:""} ></EpisodesLister>
                 </div>
             </div>
-        </div>
+        </div>}
+        {
+            !animeDetails&&
+            <div className="loadingSpinner">
+            <Oval
+                height={80}
+                width={80}
+                color="#87CEEB"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={!animeDetails}
+                ariaLabel='oval-loading'
+                secondaryColor="#4fa94d"
+                strokeWidth={2}
+                strokeWidthSecondary={2}
+
+                />
+            </div>
+        }
     </div>
     )
 }

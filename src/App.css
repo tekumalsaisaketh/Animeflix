@@ -34,3 +34,9 @@ a{
   padding-top: 0px;
   height: fit-content;
 }
+.loadingSpinner
+{
+  position: absolute;
+  top: 37%;
+  left: 47%;
+}
