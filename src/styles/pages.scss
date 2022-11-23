@@ -1,0 +1,49 @@
+.anime_name_pagination {
+    font-size: 14px;
+}
+.pagination {
+    padding: 4px;
+    float: right;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 14px;
+    width: fit-content;
+    font-weight: 600;
+}
+.pagination ul {
+    margin: 0;
+    padding: 2px;
+
+}
+.pageNo
+{
+    margin: 0 5px 0 5px;
+    background-color: #282828;
+    padding: 2px 3px 2px 3px;
+    width: 20px !important;
+}
+.selected{
+    background-color: #87CEEB;
+    color: black !important;
+}
+.arrow
+{
+    margin: 0 5px 0 5px;
+}
+.pagination ul li {
+    float: left;
+    width: fit-content;
+    height: 24px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    
+}
+
+.pagination ul li {
+    color: #87CEEB ;
+}
+

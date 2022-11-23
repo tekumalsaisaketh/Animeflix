@@ -7,19 +7,25 @@
     align-items: center;
     margin-left: 100px;
     margin-right: 100px;
+    justify-content: space-between;
+}
+.left_header
+{
+    display: flex;
+    flex-direction: row;
 }
 .searchBox input
 {
     width: 278px;
-    height: 20px;
+    height: 25px;
+    line-height: 18px;
     margin-left: 40px;
     margin-right: 20px;
     padding: 2px;
     padding-left: 10px;
     padding-right: 5px;
     background-color: rgb(20,20,20);
-    border: 1px solid rgb(60, 60, 60);
-    border: 1px solid gray;
+    border: 1px solid rgb(128, 128, 128);
 }
 .searchBox input::placeholder
 {
@@ -55,17 +61,18 @@ button
   width: 30px;
   height: 34px;
   z-index: 10;
-  margin-right: 10px;
+  margin:0 10px 0 10px;
   top: 100px;
+
 }
 .searchlist
 {
     position: absolute;
-    padding: 20px;
+    padding: 10px 0 20px 0px;
     padding-bottom: 5px;
     box-sizing: border-box;
     top: 40px;
-    left: 353px;
+    right: 130px;
     z-index: 20;
     list-style: none;
     width: 295px  ;
@@ -78,6 +85,7 @@ button
 .searchlist a li{
     height: 50px !important;
     display: flex;
+    align-items: center;
 }
 .searchAnimeDetails
 {
@@ -86,4 +94,8 @@ button
     flex-direction: row;
     flex-wrap: nowrap;
     height: 30px;
+}
+.seachanimeli:hover
+{
+    background-color: #282828;
 }

@@ -1,3 +1,11 @@
+.navbar
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 33px;
+}
 #navtab
 {
     margin: 15px 10px 15px 65px;

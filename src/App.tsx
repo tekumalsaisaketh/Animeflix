@@ -8,9 +8,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Player from './components/Player'
 import DetailsPage from './components/Details';
 import RightSide from './components/Rightside';
+import PageSelector from './components/pages';
 
 function App() {
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient();
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
