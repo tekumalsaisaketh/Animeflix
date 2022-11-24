@@ -32,6 +32,7 @@
     font-weight: 700;
     font-size: 14px;
 
+
 }
 .logobutton
 {
@@ -98,4 +99,19 @@ button
 .seachanimeli:hover
 {
     background-color: #282828;
+}
+
+.logbtn{
+    width: fit-content;
+    padding: 7px 10px 7px 10px;
+    border-radius: 5px;
+    background-color: #87b4ce;
+    cursor: pointer;
+}
+.logbtn:hover{
+    transform: scale(0.95,0.95);
+}
+.searnlog{
+    display: flex;
+    align-items: center;
 }

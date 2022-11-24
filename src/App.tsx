@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import LeftSide from './components/Leftside';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Player from './components/Player'
 import DetailsPage from './components/Details';
 import RightSide from './components/Rightside';
-import PageSelector from './components/pages';
-
+import { UserAuthProvider } from './Auth/UseAuthContex';
+import SignInPage from './components/SignIn';
 function App() {
   const queryClient = new QueryClient();
+  const url=window.location.href;
+  const location=url.split('/').at(-1);
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
+       <BrowserRouter>
+      <UserAuthProvider>
+        {location==="login"&&<SignInPage></SignInPage>}
+      {location!=="login"&&<div className="App">
         <Header></Header>
-        <BrowserRouter>
-          <Routes>
-              <Route index element=
+       
+          <Routes>  
+              <Route path='/'></Route>
+      
+              <Route index path="home" element=
               {
+  
+        
                 <div className='container'>
                   <div className='leftside'>
                     <LeftSide></LeftSide>
@@ -33,8 +40,10 @@ function App() {
               <Route path="player/*" element={<Player></Player>} />
               <Route path="details/*" element={<DetailsPage></DetailsPage>}/>
           </Routes>
-        </BrowserRouter>
-    </div>
+      
+    </div>}
+    </UserAuthProvider>
+    </BrowserRouter>
     </QueryClientProvider>
   );
 }
